@@ -46,6 +46,8 @@ models:
       +materialized: table
     src:
       +materialized: ephemeral
+    fct:
+      +tags: ['fact']
 
 flags:
   warn_unsupported: False
