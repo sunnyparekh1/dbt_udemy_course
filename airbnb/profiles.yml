@@ -6,8 +6,8 @@ airbnb:
       user: dbt
 
       role: TRANSFORM
-      private_key_path: "{{ env_var('DBT_SNOWFLAKE_PRIVATE_KEY_PATH') }}"
-      private_key_passphrase: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_PRIVATE_KEY_PASSPHRASE') }}"
+      private_key_path: "secrets\\dbt_snowflake_pvt_key.p8"
+      private_key_passphrase: "q"
 
       database: AIRBNB
       schema: DEV
