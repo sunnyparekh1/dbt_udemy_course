@@ -59,3 +59,4 @@ data_tests:
 
 vars:
   'dbt_date:time_zone': 'Asia/Kolkata'
+  'your_name_dbt': 'Default username for this project' #This is a variable that can be used in the project. It can be overridden by passing a different value when running dbt commands.
