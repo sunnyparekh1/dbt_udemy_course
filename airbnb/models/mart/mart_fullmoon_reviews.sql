@@ -1,5 +1,9 @@
 {{ config (
-    materialized = 'table',
+    materialized = 'incremental',
+    incremental_strategy = 'microbatch',
+    event_time = "review_date",
+    begin = "2009-06-20",
+    batch_size = "year",
     tags = ['fact']
 )
 }}
@@ -17,7 +21,7 @@ SELECT
     CASE
         WHEN fm.full_moon_date IS NULL THEN 'not full moon'
         ELSE 'full moon'
-    END AS is_full_moon,
+    END AS is_full_moon
 FROM fct_reviews r
 LEFT JOIN full_moon_dates fm
 ON (TO_DATE(r.review_date) = DATEADD(DAY, 1, fm.full_moon_date))

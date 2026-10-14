@@ -1,7 +1,9 @@
 {{
     config (
         materialized = "incremental",
-        on_schema_change = 'fail'
+        on_schema_change = 'fail',
+        event_time = "review_date",
+        begin = "2009-06-20"
     )
 }}
 
