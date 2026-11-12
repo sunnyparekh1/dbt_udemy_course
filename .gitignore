@@ -3,3 +3,4 @@ logs/
 .env
 *.p8
 *.pem
+*.ps1
